@@ -1,4 +1,11 @@
 # java
+
+## IOC
+- http://www.digibarn.com/friends/curbow/star/XDEPaper.pdf
+- http://martinfowler.com/bliki/InversionOfControl.html
+- http://martinfowler.com/articles/injection.html
+
+## 其他
 ###构造方法:
 - 在new关键字后面要调用的方法，构造方法每个类都会提供一个默认的构造方法。
 -	语法：构造方法的修饰符通常是public的！！
