@@ -27,7 +27,7 @@
 
 ### 前端框架
 - MVVM
-- vue
+- vuemetaThink
 
 ### 数据管理中心
 - vuex
@@ -71,7 +71,8 @@
 ### 函数式编程
 
 ## 其他
-- nginx 热加载
+- nginx
+- redis
 
 ## 书籍
 - javascript高级编程
