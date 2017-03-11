@@ -1,23 +1,25 @@
 # backToBasics
 
 ## 前端基础
+- 事件冒泡
+- 闭包
+- 前端内存泄漏
+- bind call apply
+- Clone 
+- 科里化
+
 ### XSS
 - 原理
 - 场景
 
 ### 缓存
-### CDN 缓存
-### Clone
+- CDN 缓存
+- 浏览器缓存
+
 ### HTTP
-#### 一个案例说起：当浏览器输入一行url,发生了什么
+- 一个案例说起：当浏览器输入一行url,发生了什么
+- 204 304的理解
 
-### 事件冒泡
-### 闭包
-### 前端内存泄漏
-### bind call apply 
-### 科里化
-
-### 204 304的理解
 ### 跨域
 - 同源策略
 - Cors
@@ -25,16 +27,12 @@
 - iframe
 
 ### 前端框架
+- MVVM
+- vue
 
-#### MVVM
-
-##### vue
-
-#### 数据管理中心
-
-##### vuex
-
-##### redux
+### 数据管理中心
+- vuex
+- redux
 
 ### 数据上报、分析以及服务监控
 - sentry
@@ -57,10 +55,11 @@
 ### nodejs基础
 - promise
 - fetch
+- io多路复用 epoll
 
 ### nodejs直出
 - nodejs+vue+vuex直出
-
+- 减少请求
 
 ## java
 - AOP
@@ -70,7 +69,6 @@
 - DAO
 
 ## 编程思想
-
 ### 函数式编程
 
 ## 其他
