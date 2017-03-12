@@ -74,7 +74,7 @@
 - nginx
 - redis
 
-## 书籍
+## 书籍【推荐】
 - javascript高级编程
 - http权威指南 http图解
 - 高性能mysql
