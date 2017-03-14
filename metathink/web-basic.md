@@ -49,6 +49,16 @@ for(var i = 0; i < 10; i++){
 
 `
 - 说明： 打印数据时，匿名函数标示对外部变量i的引用，此时for循环已经结束，i的值被修改成10。为了解决这个问题，应该在每次循环中创建变量i的拷贝
+`
+for(var i = 0; i < 10; i++) {
+    (function(e) {
+        setTimeout(function() {
+            console.log(e);  
+        }, 1000);
+    })(i);
+}
+
+`
 
 ## 前端内存泄漏
 ## bind call apply
