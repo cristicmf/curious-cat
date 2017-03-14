@@ -1,4 +1,8 @@
 #前端基础
+## 基础类型
+- Null Undefined String Number Boolean
+## this
+
 ## 事件冒泡
 `
 function callFuc(e){
@@ -38,6 +42,27 @@ apple.say.apply(banana);    //My color is yellow
 
 `
 ## Clone
+
+`
+function clone(obj) {
+  if(obj instanceof []) {
+    var b = [] 
+  for (var i=0;i<obj.length;i++) {
+    b = clone(arr[i]) 
+  } 
+    return b
+  } else if (obj instance Object) {
+    var b = {} 
+    for(var i in Obj) { 
+      b = clone(Obj(i)) 
+    } 
+      return b 
+    } else { 
+      return obj 
+    } 
+}
+`
+
 ## 科里化
 `
 function add(x,y){
@@ -77,7 +102,9 @@ function init(x) {
 init(4)(3);
 //通过柯里化，获取一个拥有记忆功能的函数，简化后续的多种计算操作，这就是闭包。
 `
-## 原型链 hasOwnProperty
+## 原型链 
+- 语法糖 Class
+- hasOwnProperty 
 `
 Object.prototype.bar = 1;
 var foo = {moo:'test'};
@@ -89,3 +116,8 @@ for(var i in foo){
 }
 
 `
+## javascript IOC
+`
+
+`
+
