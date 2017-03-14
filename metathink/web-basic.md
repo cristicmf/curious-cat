@@ -20,6 +20,36 @@ for(var i = 0;i<btn.length;i++){
 
 `
 ## 闭包
+
+- 当前作用域总能够访问到外部作用域的变量
+- 栗子 模拟私有变量 
+`
+function Counter(start){
+  var count = start
+  return {
+    increment: function(){
+      count++
+    },
+    get:function(){
+      return count;
+    }
+  }
+}
+var foo = Counter()
+foo.increment()
+foo.get();
+`
+- 循环中的闭包
+`
+for(var i = 0; i < 10; i++){
+  setTimeout(function(){
+    console.log(i)
+  },1000)
+}//输出10，十次
+
+`
+- 说明： 打印数据时，匿名函数标示对外部变量i的引用，此时for循环已经结束，i的值被修改成10。为了解决这个问题，应该在每次循环中创建变量i的拷贝
+
 ## 前端内存泄漏
 ## bind call apply
 `
