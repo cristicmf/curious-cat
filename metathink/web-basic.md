@@ -84,22 +84,25 @@ apple.say.apply(banana);    //My color is yellow
 ## Clone
 
 `
-function clone(obj) {
-  if(obj instanceof []) {
-    var b = [] 
-  for (var i=0;i<obj.length;i++) {
-    b = clone(arr[i]) 
-  } 
-    return b
-  } else if (obj instance Object) {
-    var b = {} 
-    for(var i in Obj) { 
-      b = clone(Obj(i)) 
-    } 
-      return b 
-    } else { 
-      return obj 
-    } 
+function clone(obj){
+  if(Object.prototype.toString.call(obj) === '[object Array]'){
+    return obj.slice().map(item => clone(item))
+  }
+
+  if(Object.prototype.toString.call(obj) === '[object Object]'){
+    let keys = Object.keys(obj)
+    var objProto = Object.getPrototypeOf(obj)
+    var res = objProto === Object.prototype ? {} : Object.create(objProto)
+
+    keys.reduce((curr, key) => {
+      curr[key] = clone(obj[key])
+      return curr
+    }, res)
+    
+    return res
+  }
+
+  return obj
 }
 `
 
