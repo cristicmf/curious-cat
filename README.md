@@ -13,6 +13,8 @@
 ### 安全
 - XSS原理、场景
 
+### 编码
+
 ### 劫持
 - 浏览劫持
 - CDN劫持
@@ -45,7 +47,7 @@
 - 重写console,进行错误分析
 
 ### 调试技巧
-- 重写console
+- console
 - fidller + willow + Rosin
 
 ## 算法和数据结构
@@ -54,7 +56,7 @@
 
 ## 设计模式
 - AOP
-- IOC
+- IOC【话说小粒度的hook】
 
 ## nodejs
 ### nodejs基础
