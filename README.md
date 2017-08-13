@@ -82,6 +82,7 @@
 
 ## 书籍【推荐】
 - javascript高级编程
+- 你不知道的javascript
 - http权威指南 
 - 高性能mysql
 - 操作系统
