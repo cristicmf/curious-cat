@@ -51,6 +51,7 @@
 - 快排序
 - 动态规划
 - 贪心算法
+- [视频](http://open.163.com/special/opencourse/algorithms.html)
 
 ## 设计模式
 
