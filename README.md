@@ -5,9 +5,8 @@
 - this
 - 作用域
 - 闭包
-- 前端内存泄漏
 - bind call apply
-- Clone 
+- clone 
 - 科里化
 
 ### 安全
@@ -21,57 +20,52 @@
 - CDN 缓存
 - 浏览器缓存
 
-### HTTP
-- 当“当浏览器输入一行url”我想到了什么
-- 204 304
+### 计算机网络
+- 204 304 101 206 502
 - https
+- http2.0 http1.0 http1.1 
+
 ### 跨域
 - 同源策略
-- Cors
+- cors
 - jsonp
 - iframe
+- img
 
 ### 前端框架
-- MVVM
-- vuemetaThink
+- vuejs
+- react
+- zeptojs
 
-### 数据管理中心
-- vuex
-- redux
-
-### 数据上报、分析以及服务监控
-- sentry
+## 数据上报、分析以及服务监控
+- 安全监控 sentry
 - onerror try...catch
 - 重写console,进行错误分析
 
-### 调试技巧
+## 调试技巧
 - 重写console
-- fidller + willow + Rosin
+- fidller + willow + Rosin，快速调试移动端
 
 ## 算法和数据结构
 - 快排序
 - 动态规划
+- 贪心算法
 
 ## 设计模式
-- AOP
-- IOC
 
 ## nodejs
 ### nodejs基础
+- 异步
+- 协程
 - promise
 - fetch
 - io多路复用 epoll
 
 ### nodejs直出
-- nodejs+vue+vuex直出
-- 减少请求
+- 使用nodejs+vue+vuex直出，应用于
 
-## java
-- AOP
-- IOC
-- 抽象类
-- ORM
-- DAO
+## 有意思的问题
+- 当“当浏览器输入一行url”我想到了什么
 
 ## 编程思想
 ### 函数式编程
