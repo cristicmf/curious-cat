@@ -82,9 +82,11 @@
 
 ## 书籍【推荐】
 - javascript高级编程
-- http权威指南 http图解
+- http权威指南 
 - 高性能mysql
 - 操作系统
 - 算法导论 
+- SICP
 
-### 说明  metaThink是对每一个点的展开 
+
+
