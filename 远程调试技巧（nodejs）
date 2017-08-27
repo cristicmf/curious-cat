@@ -1,0 +1,15 @@
+#### You can use node --inspect too in your remote machine. 
+
+(1) Start your node with node --inspect --debug-brk myapp.js    
+(2)  Search for an string like this at the log head and copy it chrome-devtools://devtools/remote/serve_file/@60cd6e859b9ff284980/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/bef2ae68
+
+(3)Then locally ssh -L 9229:127.0.0.1:9229 myuser@myserver -N  
+
+  ssh -L 9229:127.0.0.1:9229 myuser@myserver -N 
+
+(4)Paste the line you copied the log on your local chrome browser
+
+
+- node --inspect --debug-brk index.js
+
+- ssh -L 9229:127.0.0.1:9229 username@ip -N
