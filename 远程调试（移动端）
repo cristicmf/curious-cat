@@ -1,0 +1,54 @@
+#fiddler+willow+Rosin的使用
+安装顺序 fiddler-->willow-->Rosin
+Rosin安装注意：Rosin一定要安装在同目录下
+Rosin可能还是无法匹配到相关的文件
+方法1.到官网下载源码，重新编译
+方法2.直接将编译好的js直接加入到界面上
+扩展：将fiddler里面相关的模块扩展，和相关的可以使用的插件，仔细的使用和修改
+关于fiddler的安装需要注意的问题：
+1.tools--->fiddler options--->connections
+
+2.可以进行抓取 https
+
+
+3.Willow处理技巧【可以更加方便的查看数据】
+
+4.Rosin处理技巧
+
+【根据需要书写匹配规则，可以看到对应的页面打印的log】
+
+5.可以直接编码 tool-->TextWizard
+
+6.模拟慢网速
+m_SimulateModem
+if (m_SimulateModem) {
+    // Delay sends by 300ms per KB uploaded.
+    oSession["request-trickle-delay"] = "300"; 
+    // Delay receives by 150ms per KB downloaded.
+    oSession["response-trickle-delay"] = "150"; 
+}
+将300改成2000保存后，
+点击Rules-->Performance-->Simulate Modern Speeds  进行勾选
+可以随便打开一个网页，会发现网页加载出来变慢了
+7.关于命令行
+fiddler 的命令用于筛选以及操作所有的session
+a.选择会话列表中大于10K的session :>10k 或者 10000
+b.查找特定返回状态码的session =200 则查找所有返回码为200的session
+c.查找使用了特定host的session
+d.预先设置会话加粗 bold sometext
+8.出现的场景：所有的其他的serverIp都为127.0.0.1的情况，并且服务器无法取到数据
+    可以检查电脑是否开启了其他的翻墙软件，可能是这些翻墙软件导致的
+
+9.chrome和firefox浏览器无法被监听的情况
+解决办法：禁用chrome和firefox中具有代理功能的插件，比如我的chrome安装了switchSharp，禁用它或选择“使用系统代理设置”，或在switchSharp中新配置一个代理项（比如名为fiddler，用于指向代理127.0.0.1，端口8888，如下图），即可实现监听。
+10.无法代理本地web服务器的访问请求
+使用fiddler的时候，我们更多的是基于本地程序的调试，可惜fiddler捕捉不了本地（localhost或127.0.0.1）的http请求。难道fiddler就束手无策了吗？当然不是。 
+一般我们访问安装在本地的服务器程序时，使用的localhost或127.0.0.1，默认会绕过代理，直接访问目标服务器，通过fiddler特有的请求方式，可以使本地请求及响应都被fiddler拦截。
+
+
+
+方法一：在localhost后增加.fiddler
+比如请求http://localhost:8080改为http://localhost.fiddler:8080即可
+方法二：更简单，在localhost或127.0.0.1后增加一个点即可
+比如http://localhost.:8080
+
