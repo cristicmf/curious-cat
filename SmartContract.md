@@ -18,7 +18,7 @@ contract SimpleDemo {
 
 ```
 
-- 在脚本中
+- 在脚本
 
 ```javascript
     var event = instance.AddMsg({}, function(error, result) {
@@ -46,4 +46,10 @@ contract SimpleDemo {
 - 合约调用合约，不能使用不定长字符串作为阐述
 ```
  string 是不可以，bytes32 可以
+```
+
+- memory 定义的内存字段
+```
+1.不能超过16个
+2.一般使用数组进行存储
 ```
