@@ -11,28 +11,37 @@ netstat ip port
 tcpdump -Xns0 port 9229
 ```
 ### 查看端口
-- ps -ef|grep port 
-- losf -i:port
+```$ ps -ef|grep port``` 
+```$ lsof -i:port```
 
 ---
 ## 文件
+### md5sum文件校验
+```
+$ md5sum file
+```
+### 在线格式化文件
+```
+$ python -m json.tool somejson.txt
+```
+
 ### 打包和压缩文件
 ```
-zip -r ./xahot.zip ./* -r表示递归
-zip [参数] [打包后的文件名] [打包的目录路径]
+$ zip -r ./xahot.zip ./* -r表示递归
+$ zip [参数] [打包后的文件名] [打包的目录路径]
 
-zip –q –r xahot.zip /home/wwwroot/xahot
+$ zip –q –r xahot.zip /home/wwwroot/xahot
 ```
 ### 文件操作
 ```
-tail -f 文件
+$ tail -f 文件
 ```
 ---
 ## 系统相关
 ### 查看内存
 ```
-df -h
-du -sh *
+$ df -h
+$ du -sh *
 ```
 ---
 ## Vim
