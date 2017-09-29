@@ -40,6 +40,8 @@ contract SimpleDemo {
     return str;
 }
 ```
+##### 重载方法
+- 兼容后期扩展
 
 ##### 调用合约注意事项
 
@@ -56,5 +58,7 @@ contract SimpleDemo {
 4. 合约查找数据时，减少遍历，可以使用mapping替代
 ```
 ##### 技巧
+- 合约灰度部署
 
 ##### 学习资料
+
