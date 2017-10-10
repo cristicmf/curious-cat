@@ -85,7 +85,16 @@ $ useradd testuser
 ```
 $ passwd testuser 
 ```
-
+### $PATH
+$PATH：决定了shell将到哪些目录中寻找命令或程序，PATH的值是一系列目录，当您运行一个程序时，Linux在这些目录下进行搜寻编译链接。
+#### 查看环境变量
+```
+$ echo $PATH
+```
+#### 添加环境变量
+```
+$ export PATH=/opt/STM/STLinux-2.3/devkit/sh4/bin:$PATH
+```
 
 ###### 相关文件说明
 
