@@ -15,7 +15,10 @@ $ tcpdump -Xns0 port 9229
 $ ps -ef|grep port
 $ lsof -i:port
 ```
-
+### 查看外网ip
+```
+$ curl ifconfig.me/all.xml
+```
 ---
 ## 文件
 ### md5sum文件校验
@@ -38,7 +41,7 @@ $ zip –q –r xahot.zip /home/wwwroot/xahot
 
 #### tar
 ```
-$
+$ tar zcvf FileName.tar.gz DirName
 ```
 
 ### 文件操作
@@ -57,6 +60,36 @@ $ du -sh *
 $ top
 $ ps
 ```
+### 查看僵尸进程
+```
+ps -ef|grep defunct
+```
+
+### 远程拷贝
+scp [参数] [原路径] [目标路径]
+```
+$ scp -r file.tar.gz path
+```
+
+## 进程
+### 查看进程所在目录
+```
+$ ll /proc/pid
+```
+## 用户分组和权限管理
+### 创建用户
+```
+$ useradd testuser
+```
+### 给用户设置密码
+```
+$ passwd testuser 
+```
+
+
+####### 相关文件说明
+- 与用户（user）相关的配置文件； /etc/passwd 注：用户（user）的配置文件； /etc/shadow 注：用户（user）影子口令文件；
+- 与用户组（group）相关的配置文件； /etc/group 注：用户组（group）配置文件； /etc/gshadow 注：用户组（group）的影子文件 
 
 ---
 ## Vim
