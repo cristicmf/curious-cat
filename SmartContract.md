@@ -61,7 +61,7 @@ contract SimpleDemo {
 ##### 智能合约架构设计
 
 ##### 技巧
-- (合约灰度部署)[https://gist.github.com/cristicmf/b48e309763e39a5a531cc7513c56f164]
+- [合约灰度部署](https://gist.github.com/cristicmf/b48e309763e39a5a531cc7513c56f164)
 
 ##### 学习资料
 
