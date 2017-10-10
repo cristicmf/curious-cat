@@ -58,8 +58,10 @@ contract SimpleDemo {
 3. 合约之间调用，参数传递，不能使用String类型
 4. 合约查找数据时，减少遍历，可以使用mapping替代
 ```
+##### 智能合约架构设计
+
 ##### 技巧
-- 合约灰度部署
+- (合约灰度部署)[https://gist.github.com/cristicmf/b48e309763e39a5a531cc7513c56f164]
 
 ##### 学习资料
 
