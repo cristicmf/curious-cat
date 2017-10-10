@@ -87,7 +87,8 @@ $ passwd testuser
 ```
 
 
-####### 相关文件说明
+###### 相关文件说明
+
 - 与用户（user）相关的配置文件； /etc/passwd 注：用户（user）的配置文件； /etc/shadow 注：用户（user）影子口令文件；
 - 与用户组（group）相关的配置文件； /etc/group 注：用户组（group）配置文件； /etc/gshadow 注：用户组（group）的影子文件 
 
