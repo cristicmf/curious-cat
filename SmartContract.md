@@ -68,4 +68,5 @@ contract SimpleDemo {
 ##### 学习资料
 - [smart-contract-best-practices](https://github.com/ConsenSys/smart-contract-best-practices)
 - [solidity](http://solidity.readthedocs.io/en/latest/security-considerations.html)
+- [truffle development framework](https://github.com/trufflesuite/truffle)
 
