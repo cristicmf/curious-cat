@@ -66,4 +66,6 @@ contract SimpleDemo {
 - [合约灰度部署](https://gist.github.com/cristicmf/b48e309763e39a5a531cc7513c56f164)
 
 ##### 学习资料
+- [smart-contract-best-practices](https://github.com/ConsenSys/smart-contract-best-practices)
+- [solidity](http://solidity.readthedocs.io/en/latest/security-considerations.html)
 
