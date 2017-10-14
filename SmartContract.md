@@ -40,8 +40,7 @@ contract SimpleDemo {
     return str;
 }
 ```
-##### 重载方法
-- 兼容后期扩展
+
 ##### mapping的使用
 - 大量的使用mapping,导致性能变差
 ##### 调用合约注意事项
@@ -58,6 +57,10 @@ contract SimpleDemo {
 3. 合约之间调用，参数传递，不能使用String类型
 4. 合约查找数据时，减少遍历，可以使用mapping替代
 ```
+
+##### 重载方法
+- 兼容后期扩展
+
 ##### 智能合约架构设计
 
 ##### 设计智能合约日志
@@ -70,3 +73,5 @@ contract SimpleDemo {
 - [solidity](http://solidity.readthedocs.io/en/latest/security-considerations.html)
 - [truffle development framework](https://github.com/trufflesuite/truffle)
 
+##### somethings
+- [smart-contracts-and-bitcoin](https://medium.com/@maraoz/smart-contracts-and-bitcoin-a5d61011d9b1)
