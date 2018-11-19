@@ -5,9 +5,12 @@
   - GOPATH
 
 ## 2. 语言特点
-- Channel是Go中的一个核心类型，可以把它看成一个管道，通过它可以完成goroutine之间的通信。
+
+## 3. Step By Step
+- [example](https://gobyexample.com/)
+
+## 4. 常用库
+
+## 5. 需要注意的问题
 
 
-## 3. 常用库
-
-## 4. 需要注意的问题
