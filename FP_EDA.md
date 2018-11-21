@@ -469,3 +469,4 @@ Google Cloud Platform
 ---
 ###### DISS
 - [eda-versus-cep-and-soa](https://soa-eda.blogspot.com/2008/10/eda-versus-cep-and-soa.html)
+- [cep-eda-and-soa](https://apama.typepad.com/my_weblog/2008/10/cep-eda-and-soa.html)
