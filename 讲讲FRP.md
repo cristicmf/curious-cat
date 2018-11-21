@@ -35,6 +35,8 @@
 b、c是被`观察者`，a是`观察者`，如果随着`时间推移`，b和c的值`不断变化`
 b、c发生的变化的一系列`事件组成事件流`，可以用集合表示`事件流`，FRP做的事情，就是`遍历`这个事件流的`集合`，将导致b和c的变化的时间重新播放，然后a就获取了一系列的值。
 
+##### [functional-reactive-programming](https://www.infoq.cn/article/functional-reactive-programming)
+
 ### 解释
 事件总线(Event buses)或咱们常见的单击事件就是一个异步事件流，你可以观察这个流，也可以基于这个流做一些自定义操作（原文：side effects，副作用，本文皆翻译为自定义操作）。响应式就是基于这种想法。你能够创建所有事物的数据流，而不仅仅只是单击和悬停事件数据流。 流廉价且无处不在，任何事物都可以当作一个流：变量、用户输入、属性、缓存、数据结构等等。比如，假设你的微博评论就是一个跟单击事件一样的数据流，你能够监听这个流，并做出响应。
 
@@ -42,6 +44,7 @@ b、c发生的变化的一系列`事件组成事件流`，可以用集合表示`
 
 
 ###### 更多函数式
+- [javascriptallongesix](https://leanpub.com/javascriptallongesix/read)
 - [functors_monads_applicatives](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html#monads)
 - [haskell](https://www.haskell.org/tutorial/monads.html)
 
@@ -207,6 +210,7 @@ window.innerWidth / 2) + 10 + "px")￼);
 ---
 ###### 思考
 - 电路时序和FRP有什么关联呢？
+- FRP和EDA是什么关系呢？
 
 ---
 ###### 更多学习
