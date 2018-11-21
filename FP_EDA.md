@@ -323,6 +323,8 @@ MDM 的作用是组织如何处理公司实施其业务流程所需的主数据�
 
 ### 6.1 定义
 ESB 是一个中间件解决方案，使用面向服务的模型来促进和支持异构环境之间的互操作性。没有规范准确定义了什么是 ESB 或者它应该提供什么功能。虽然 ESB 主要与“调节”和“集成”这类概念相关，但它还适合作为一个平台以类似于应用服务器的方式提供服务。ESB 代表被称作“集成”和“应用服务器”的产品类别的整合。
+
+
 ![image](https://www.oracle.com/ocom/groups/public/@otn/documents/digitalasset/1967697.jpg)
 
 
@@ -432,8 +434,16 @@ BPM是以规范标准的方式对业务流程进行建模以及执行的一组�
 
 ---
 ###### 附录：
+###### CEP
 
-Google Cloud Platform
+![image](https://www.ibm.com/developerworks/cn/websphere/bpmjournal/0812_boughannam/images/figure2.gif)
+
+
+![image](https://www.ibm.com/developerworks/cn/websphere/bpmjournal/0812_boughannam/images/figure3.gif)
+
+![image](https://www.ibm.com/developerworks/cn/websphere/bpmjournal/0812_boughannam/images/figure4.gif)
+
+![image](https://www.ibm.com/developerworks/cn/websphere/bpmjournal/0812_boughannam/images/figure5.gif)
 
 ![image](https://cloud.google.com/solutions/images/architecture-complex-event-processing.svg)
 
@@ -453,7 +463,7 @@ Google Cloud Platform
 - [Google_cloud_platform_CEP](https://cloud.google.com/solutions/architecture/complex-event-processing)
 - [iBPM](https://kknews.cc/tech/blyyqbm.html)
 - [oracle](https://www.oracle.com/technetwork/cn/articles/soa/ind-soa-toc-1934143-zhs.html)
-
+- [bpmjournal](https://www.ibm.com/developerworks/cn/websphere/bpmjournal/0812_boughannam/0812_boughannam.html)
 
 --- 
 ###### Company
