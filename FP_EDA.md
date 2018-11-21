@@ -444,6 +444,9 @@ Google Cloud Platform
 
 
 ---
+###### 仓库：
+
+---
 ######  参考：
 - [FRP定义](http://conal.net/papers/icfp97/)
 - [事件驱动架构](https://baike.baidu.com/item/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9E%B6%E6%9E%84/883637)
@@ -461,3 +464,8 @@ Google Cloud Platform
 ###### Company
 - [tibco](https://wiki.mbalib.com/wiki/TIBCO%E8%BD%AF%E4%BB%B6%E5%85%AC%E5%8F%B8)
 - Gartner
+
+
+---
+###### DISS
+- [eda-versus-cep-and-soa](https://soa-eda.blogspot.com/2008/10/eda-versus-cep-and-soa.html)
