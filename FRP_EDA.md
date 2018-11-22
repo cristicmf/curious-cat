@@ -36,20 +36,41 @@ as self-sucient as possible, there must be feedback loops at all levels.
 
 
 ---
+```
 There are two popular paradigms for concurrency. The rst is shared-state concur-
 rency: threads access shared data items using special control structures called monitors
 to manage concurrent access.
-
-
+```
+```
 The second
 paradigm is message-passing concurrency: concurrent agents each running in a single
 thread that send each other messages. The languages CSP (Communicating Sequential
 Processes) [25] and Erlang [6] use message passing. CSP processes send synchronous
 messages (the sending process waits until the receiving process has taken the message)
 and Erlang processes send asynchronous messages (the sending process does not wait).
+```
 
 ### Computer programming and system design
 
+
+
+```
+A CSP can be stated as follows: given a set of variables ranging
+over well-dened domains and a set of constraints (logical relations) on those variables,
+nd an assignment of values to the variables that satises all the constraints.
+
+```
+
+### FRP && RP
+time
+```
+discrete instead of continuous
+```
+###### example
+```
+OpenMusic has a mature language organized as three layers: functional, deterministic
+concurrency, and shared state.
+```
 
 ### 微观
 
