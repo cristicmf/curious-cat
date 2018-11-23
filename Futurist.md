@@ -17,3 +17,4 @@ Security is handled by cryptographic protocols and techniques that ensure the pe
 
 Additionally, much of what is on the market as an enterprise “blockchain” solution lacks at least two of the five core components: Encryption, immutability, distribution, decentralization and tokenization.
 
+[the-cios-guide-to-quantum-computing](https://www.gartner.com/smarterwithgartner/the-cios-guide-to-quantum-computing/)
