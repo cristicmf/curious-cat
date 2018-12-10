@@ -4,6 +4,7 @@
 - 🥝[hey_FRP](https://github.com/cristicmf/curious-cat/blob/master/%E8%AE%B2%E8%AE%B2FRP_FP.md)
 - 🍕[FRP_EDA](https://github.com/cristicmf/curious-cat/blob/master/FRP_EDA.md)
 - 🥝[分布式系统](https://github.com/cristicmf/curious-cat/blob/master/distributed_applications.md)
+- 🍕[中间件分析](https://github.com/cristicmf/curious-cat/blob/master/Middleware.md)
 - [前端基础](https://github.com/cristicmf/knitmesh/blob/master/Web.md)
 - [Shell 常用命令](https://github.com/cristicmf/knitmesh/blob/master/Shell.md)
 - [智能合约注意事项](https://github.com/cristicmf/knitmesh/blob/master/SmartContract.md)
