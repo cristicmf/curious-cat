@@ -116,3 +116,63 @@ vim  技巧
 
 shift+g 跳转到最后一行
 gg 跳转到第一行
+
+
+
+
+---
+ooooooo
+方便日后用，主要是在my.ini文件中，配置skip-grant-tables,略过验证，然后再更新里面的密码设置。
+具体步骤：
+1、修改my.ini配置文件，添加skip-grant-tables
+2、重启mysql服务
+3、登录mysql，并设定新的密码
+4、删除my.ini配置文件中的skip-grant-tables
+5、重启mysql服务并登录
+
+1. 修改my.ini配置文件，添加skip-grant-tables
+```
+#编辑mysql配置文件
+vim /etc/my.cnf
+
+#添加
+skip-grant-tables
+ ```
+ 
+ 2、重启mysql服务
+```
+service mysql restart
+
+#新的mysql执行这个命令
+systemctl restart mysqld.service 
+```
+
+3、登录mysql，并设定新的密码
+```
+#连接mysql，直接回车即可，不需要输入密码
+mysql -u root -p
+
+#更新root用户密码
+update mysql.user set authentication_string=password('yellowcong') where user='root' and Host = 'localhost';
+
+#刷新权限
+flush privileges;
+
+#推出mysql
+exit   或者 quit
+
+```
+4、删除my.ini配置文件中的skip-grant-tables
+```
+vim /etc/my.cnf
+
+#注释掉skip-grant-tables
+```
+5、重启mysql服务并登录
+
+```
+ service mysql restart
+ mysql -uroot -pyellowcong
+ ```
+
+
