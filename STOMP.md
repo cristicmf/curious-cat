@@ -25,7 +25,13 @@ STOMP中的消息都被抽象为“帧”（有点类似AMQP中message的概念�
 ### 3.1 Frame
 
 ### 3.2 kata
-
+- connect
+- publish 
+  - topic
+  - send message
+  
+- subscribe
+  - topic
 
 ---
 ## 4. Spring Stomp 源码解析
