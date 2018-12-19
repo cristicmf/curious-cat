@@ -118,6 +118,7 @@ $ sudo systemctl restart mysqld
 
 查看字符集
 mysql> SHOW VARIABLES LIKE 'character%';
+```
 +--------------------------+----------------------------+
 | Variable_name            | Value                      |
 +--------------------------+----------------------------+
@@ -131,6 +132,7 @@ mysql> SHOW VARIABLES LIKE 'character%';
 | character_sets_dir       | /usr/share/mysql/charsets/ |
 +--------------------------+----------------------------+
 8 rows in set (0.00 sec
+```
 
 ### 7.开启端口
 $ sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
