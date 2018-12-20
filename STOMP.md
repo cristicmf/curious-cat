@@ -43,6 +43,78 @@ STOMP中的消息都被抽象为“帧”（有点类似AMQP中message的概念�
 
 ### 4.3 自定义STOMP
 
+
+## 5. STOMPJS
+- StompHandler
+```
+- _serverFrameHandlers: CONNECTED/MESSAGE/RECEIPT
+- configure
+- start
+- dispose
+- publish
+- watchForReceipt
+- subscribe
+- unsubscribe
+- begin
+- commit
+- abort
+- ack
+- nack
+```
+
+- Client-defineProperty
+```
+- webSocket
+- webSocket
+- connected
+- connectedVersion
+- active
+
+```
+- Client-function
+```
+- configure
+- activate
+- deactivate
+- forceDisconnect
+- publish
+- watchForReceipt
+- subscribe
+- unsubscribe
+- begin
+- commit
+- abort
+- ack
+- nack
+
+```
+- HeartbeatInfocc
+
+- Stomp
+```
+- Stomp.client 
+- Stomp.over
+```
+
+- FrameImpl function
+```
+- toString
+- serialize
+- serializeCmdAndHeaders
+- isBodyEmpty
+- bodyLength
+- FrameImpl.sizeOfUTF8
+- FrameImpl.toUnit8Array
+- FrameImpl.marshall
+- FrameImpl.hdrValueEscape
+- FrameImpl.hdrValueUnEscape
+```
+- FrameImpl defineProperty
+```
+- body
+- binaryBody
+```
+
 ---
 更多
 
