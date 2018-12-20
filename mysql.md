@@ -137,3 +137,11 @@ mysql> SHOW VARIABLES LIKE 'character%';
 ### 7.开启端口
 $ sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
 $ sudo firewall-cmd --reload
+
+
+
+---
+##### 查询用户权限
+```
+SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.user;
+```
