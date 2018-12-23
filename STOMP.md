@@ -124,6 +124,10 @@ STOMP中的消息都被抽象为“帧”（有点类似AMQP中message的概念�
 - [sockjs](https://github.com/sockjs/sockjs-client)
 - [rfc](https://tools.ietf.org/html/rfc6455)
 
+---
+推荐阅读
+- [BBF_USP_webinar]（https://www.broadband-forum.org/downloads/webinars/BBF_USP_webinar_2018-02-28.pdf）
+
 协议标准
 
 - [stomp-specification-1.0](https://stomp.github.io/stomp-specification-1.0.html)
