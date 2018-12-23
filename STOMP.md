@@ -126,7 +126,7 @@ STOMP中的消息都被抽象为“帧”（有点类似AMQP中message的概念�
 
 ---
 推荐阅读
-- [BBF_USP_webinar]（https://www.broadband-forum.org/downloads/webinars/BBF_USP_webinar_2018-02-28.pdf）
+- [BBF_USP_webinar](https://www.broadband-forum.org/downloads/webinars/BBF_USP_webinar_2018-02-28.pdf)
 
 协议标准
 
