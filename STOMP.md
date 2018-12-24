@@ -127,7 +127,7 @@ STOMP中的消息都被抽象为“帧”（有点类似AMQP中message的概念�
 ---
 推荐阅读
 - [BBF_USP_webinar](https://www.broadband-forum.org/downloads/webinars/BBF_USP_webinar_2018-02-28.pdf)
-
+- [mqtt协议](https://www.ibm.com/developerworks/cn/iot/iot-mqtt-why-good-for-iot/index.html)
 协议标准
 
 - [stomp-specification-1.0](https://stomp.github.io/stomp-specification-1.0.html)
