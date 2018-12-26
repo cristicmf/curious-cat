@@ -3,7 +3,7 @@
 ## 踩过的坑
 #### 1. Provisional headers are shown
 
-==场景：== 打开一个页面，发送一个请求，出现`Provisional headers are shown`
+场景：打开一个页面，发送一个请求，出现`Provisional headers are shown`
 
 查找问题，定位过程：
 1. 点击打开 `chrome://net-internals`
@@ -13,7 +13,7 @@ Net Internals 是一套工具集合，用于帮助诊断网络请求与访问方
 2. 在开始的页面触发请求
 3. 在`chrome://net-internals`的event 里面查找，刚刚触发的请求，可以通过关键词查询。可以看到相关`invalid`的信息就可以定位问题。
 
-==复现问题：== 将后端设置成https,前端请求并非是https的情况，就可以触发这个问题。
+复现问题：将后端设置成`https`,前端请求并非是`https`的情况，就可以触发这个问题。
 
 
 
