@@ -1,1 +1,99 @@
+## influxDB+telegraf 
+
+```
+- cpu[units: percent (out of 100)]
+    - usage_guest      float
+    - usage_guest_nice float
+    - usage_idle       float
+    - usage_iowait     float
+    - usage_irq        float
+    - usage_nice       float
+    - usage_softirq    float
+    - usage_steal      float
+    - usage_system     float
+    - usage_user       float
+- disk
+    - free         integer
+    - inodes_free  integer
+    - inodes_total integer
+    - inodes_used  integer
+    - total        integer
+    - used         integer
+    - used_percent float
+- diskio
+    - io_time          integer
+    - iops_in_progress integer
+    - read_bytes       integer
+    - read_time        integer
+    - reads            integer
+    - weighted_io_time integer
+    - write_bytes      integer
+    - write_time       integer
+    - writes           integer
+- kernel
+    - boot_time        integer
+    - context_switches integer
+    - entropy_avail    integer
+    - interrupts       integer
+    - processes_forked integer
+- mem
+    - active            integer
+    - available         integer
+    - available_percent float
+    - buffered          integer
+    - cached            integer
+    - free              integer
+    - inactive          integer
+    - slab              integer
+    - total             integer
+    - used              integer
+    - used_percent      float
+    - wired             integer
+- processes
+    - blocked       integer
+    - dead          integer
+    - idle          integer
+    - paging        integer
+    - running       integer
+    - sleeping      integer
+    - stopped       integer
+    - total         integer
+    - total_threads integer
+    - unknown       integer
+    - zombies       integer
+- swap
+    - free         integer
+    - in           integer
+    - out          integer
+    - total        integer
+    - used         integer
+    - used_percent float
+- system
+    - load1         float
+    - load15        float
+    - load5         float
+    - n_cpus        integer
+    - n_users       integer
+    - uptime        integer
+    - uptime_format string
+
+```
+
+```
+> CREATE RETENTION POLICY "2h0m0s" ON "telegraf" DURATION 2h REPLICATION 1 DEFAULT
+> SHOW RETENTION POLICIES ON telegraf
+name    duration shardGroupDuration replicaN default
+----    -------- ------------------ -------- -------
+autogen 0s       168h0m0s           1        false
+2h0m0s  2h0m0s   1h0m0s             1        true
+```
+
+```
+SELECT time,host,usage_system FROM "autogen".cpu limit 2
+name: cpu
+time                host             usage_system
+----                ----             ------------
+1526008670000000000 VM_42_233_centos 1.7262947210419817
+1526008670000000000 VM_42_233_centos 1.30130130130254
+```
 
