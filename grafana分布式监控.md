@@ -131,3 +131,42 @@ time                host             usage_system
 1526008670000000000 VM_42_233_centos 1.30130130130254
 ```
 
+```
+SELECT 100 - usage_idel FROM "autogen"."cpu" WHERE time > now() - 1m and "cpu"='cpu0'
+```
+
+#### COMMAND
+```
+SHOW MEASUREMENTS  --查询当前数据库中含有的表
+SHOW FIELD KEYS --查看当前数据库所有表的字段
+SHOW series from pay --查看key数据
+SHOW TAG KEYS FROM "pay" --查看key中tag key值
+SHOW TAG VALUES FROM "pay" WITH KEY = "merId" --查看key中tag 指定key值对应的值
+SHOW TAG VALUES FROM cpu WITH KEY IN ("region", "host") WHERE service = 'redis'
+DROP SERIES FROM <measurement_name[,measurement_name]> WHERE <tag_key>='<tag_value>' --删除key
+SHOW CONTINUOUS QUERIES   --查看连续执行命令
+SHOW QUERIES  --查看最后执行命令
+KILL QUERY <qid> --结束命令
+SHOW RETENTION POLICIES ON mydb  --查看保留数据
+查询数据
+SELECT * FROM /.*/ LIMIT 1  --查询当前数据库下所有表的第一行记录
+select * from pay  order by time desc limit 2
+select * from  db_name."POLICIES name".measurement_name --指定查询数据库下数据保留中的表数据 POLICIES name数据保留
+删除数据
+delete from "query" --删除表所有数据，则表就不存在了
+drop MEASUREMENT "query"   --删除表（注意会把数据保留删除使用delete不会）
+DELETE FROM cpu
+DELETE FROM cpu WHERE time < '2000-01-01T00:00:00Z'
+DELETE WHERE time < '2000-01-01T00:00:00Z'
+DROP DATABASE “testDB” --删除数据库
+DROP RETENTION POLICY "dbbak" ON mydb --删除保留数据为dbbak数据
+DROP SERIES from pay where tag_key='' --删除key中的tag
+
+SHOW SHARDS  --查看数据存储文件
+DROP SHARD 1
+SHOW SHARD GROUPS
+SHOW SUBSCRIPTIONS
+
+```
+
+
