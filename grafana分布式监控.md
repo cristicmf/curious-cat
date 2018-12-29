@@ -171,4 +171,65 @@ SHOW SUBSCRIPTIONS
 
 ```
 
+---
+## Install
+###### 默认要求使用 7.2以上版本
+
+### 1. influxdb
+
+```
+sudo yum install influxdb
+sudo systemctl start influxdb
+```
+
+判断已经安装完成,输入下面的命令，可以进入influxDB的界面
+```
+> influx
+```
+
+### 2. Telegraf 修改版本
+```
+wget https://dl.influxdata.com/telegraf/releases/telegraf-1.9.1_linux_amd64.tar.gz
+        tar xf telegraf-1.9.1_linux_amd64.tar.gz
+telegraf -version
+```
+
+#### 2.1 启动服务 
+
+config: /etc/telegraf/telegraf.conf
+
+```
+sudo systemctl start telegraf
+sudo systemctl status telegraf 
+sudo systemctl enable telegraf
+```
+
+###  3. Grafana 修改版本
+#### 3.1 安装grafana
+```
+wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.1.2-1.x86_64.rpm 
+```
+#### 3.2 启动服务、添加开机启动：
+```
+systemctl enable grafana-server
+systemctl start grafana-server
+```
+
+#### 3.3 配置说明
+```
+# 配置文件 /etc/grafana/grafana.ini
+# systemd服务名 grafana-server.service
+# 默认日志文件 /var/log/grafana/grafana.log
+# 默认数据库文件 /var/lib/grafana/grafana.db
+```
+
+#### 3.4 add plugin
+添加插件
+
+```
+sudo grafana-cli plugins install grafana-clock-panel
+sudo systemctl restart grafana-server
+```
+
+
 
