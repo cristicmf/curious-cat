@@ -34,6 +34,8 @@ Variables are shown as dropdown select boxes at the top of the dashboard. These 
 
 ## influxDB+telegraf 
 
+![image](https://www.influxdata.com/wp-content/uploads/Tick-Stack-Telegraf-2.png)
+
 ```
 - cpu[units: percent (out of 100)]
     - usage_guest      float
