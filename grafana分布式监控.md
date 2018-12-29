@@ -10,6 +10,25 @@ The Histogram option converts the graph into a histogram. A Histogram is a kind 
 often called buckets or bins. 
 Taller bars show that more data falls in that range. Histograms and buckets are described in more detail here.
 
+
+### how to get the parameter from the url
+
+###### like
+
+Use  Url http://servername:3000/dashboard/db/dashboard?refresh=10s&var-node=hanoi
+
+In Query: use where clause as shown below:
+
+```
+WHERE "system_id" =~ /^$node$/
+```
+
+### Variables
+Variables are shown as dropdown select boxes at the top of the dashboard. These dropdowns make it easy to change the data being displayed in your dashboard.
+
+
+---
+
 ## influxDB+telegraf 
 
 ```
