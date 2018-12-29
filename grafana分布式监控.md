@@ -27,6 +27,9 @@ WHERE "system_id" =~ /^$node$/
 Variables are shown as dropdown select boxes at the top of the dashboard. These dropdowns make it easy to change the data being displayed in your dashboard.
 
 
+### templating
+[templating](http://docs.grafana.org/reference/templating/)
+
 ---
 
 ## influxDB+telegraf 
