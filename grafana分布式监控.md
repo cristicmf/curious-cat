@@ -1,3 +1,15 @@
+## grafana
+### Metric
+
+For Mode there are three options:
+
+The default option is Time and means the x-axis represents time and that the data is grouped by time (for example, by hour or by minute).
+
+The Series option means that the data is grouped by series and not by time. The y-axis still represents the value.
+The Histogram option converts the graph into a histogram. A Histogram is a kind of bar chart that groups numbers into ranges,
+often called buckets or bins. 
+Taller bars show that more data falls in that range. Histograms and buckets are described in more detail here.
+
 ## influxDB+telegraf 
 
 ```
