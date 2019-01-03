@@ -94,6 +94,27 @@ Variables are shown as dropdown select boxes at the top of the dashboard. These 
 ### templating
 [templating](http://docs.grafana.org/reference/templating/)
 
+### nginx 反向代理到grafana
+
+grafana配置nginx反向代理
+将grafana配到www.myserver.com域名的/grafana/的location下
+
+##### nginx配置
+```
+location /grafana/ {
+                proxy_pass http://grafana_server:3000/;
+                proxy_set_header   Host $host;
+        }
+```
+
+##### grafana配置文件修改
+
+```
+#在/etc/grafana/grafana.ini配置文件中修改
+domain = www.myserver.com
+root_url = %(protocol)s://%(domain)s/grafana
+````
+
 ---
 
 ## influxDB+telegraf 
