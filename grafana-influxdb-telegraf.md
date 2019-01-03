@@ -92,6 +92,28 @@ Variables are shown as dropdown select boxes at the top of the dashboard. These 
 
 
 ### templating
+时间间隔
+```
+1. 选择 New 按钮新建一个模板变量
+2. 选择 Interval 变量类型，我们可以用这种变量表达时间间隔，同时设置 Name 和 Label，Name 是变量名称，实际引用的时候用$变量名称进行引用；Label 本身无实际作用，主要是用来展示在界面，让用户更加容易理解的。
+3. 可以看到在 Values 中，已经有大量预置的时间间隔，我们可以在其中增加，诸如 1m（1分钟）,1h（1小时）,1d（1天）等时间间隔变量
+在界面，我们可以见到已经生成了名为时间间隔的下拉框列表，列表中包括了我们设置的时间间隔预设值
+4. 将时序查询的 interval 设置为 $t (t 为我们设置的变量Name)。此时在下拉框里选择不同的时间间隔，图表将随之进行切换。
+```
+基于查询结果的下拉列表
+```
+
+前置步骤请参考时间间隔变量设置
+选择Query 类型
+Data source 选择你查询的目标数据源
+Query 是查询所有可能值的查询语句，ES/Logdb 的查询方式是{"find": "terms", "field": "status"}，其中status 是我们查询的目标字段，在这里可以替换成你需要的字段。更深入的语法请参考 ES 官方文档。
+Regex 可以选择对于返回的状态值进行正则表达式过滤
+Sort 选择排序方式
+Multi-value 控制下拉框是否可以支持多选，如果不选中则只能单选
+Include all value 控制是否可以支持All选项，支持全选所有的值，只在多选的模式下有效果
+Preview of values 可以预览这个字段的所有值
+```
+
 [templating](http://docs.grafana.org/reference/templating/)
 
 ### nginx 反向代理到grafana
