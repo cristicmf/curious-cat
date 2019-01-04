@@ -279,3 +279,45 @@ SHOW SUBSCRIPTIONS
 ```
 
 ---
+
+周边问题
+
+Centos 7 docker 启动grafana容器报"iptables No chain/target/match by that name"
+
+docker run -d -p 3000:3000  grafana/grafana:5.1.0  
+Error response from daemon: Cannot start container 565c06efde6cd4411e2596ef3d726817c58dd777bc5fd13762e0c34d86076b9e: iptables failed: iptables --wait -t nat -A DOCKER -p tcp -d 0/0 --dport 3888 -j DNAT --to-destination 192.168.42.11:3888 ! -i docker0: iptables: No chain/target/match by that name
+解决方法：
+
+vim /etc/sysconfig/iptables
+
+```
+*nat
+:PREROUTING ACCEPT [27:11935]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [598:57368]
+:POSTROUTING ACCEPT [591:57092]
+:DOCKER - [0:0]
+-A PREROUTING -m addrtype --dst-type LOCAL -j DOCKER
+-A OUTPUT ! -d 127.0.0.0/8 -m addrtype --dst-type LOCAL -j DOCKER
+-A POSTROUTING -s 172.17.0.0/16 ! -o docker0 -j MASQUERADE
+COMMIT
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:DOCKER - [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 10.0.0.0/8 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 10050 -j ACCEPT
+-A INPUT -s 172.16.0.0/12 -j ACCEPT
+-A INPUT -s 192.168.0.0/16 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type 8 -j DROP
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 3000 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 36091 -j ACCEPT
+-A INPUT -j DROP
+-A FORWARD -j DROP
+-A OUTPUT -j ACCEPT
+COMMIT
+```
