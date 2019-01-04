@@ -23,3 +23,8 @@
 - [智能合约注意事项](https://github.com/cristicmf/knitmesh/blob/master/SmartContract.md)
 - [常用插件](https://github.com/cristicmf/curious-cat/blob/master/%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6.md)
 
+
+
+---
+### SKILL
+- [immersion learner](https://github.com/cristicmf/curious-cat/blob/master/immersion.md)
