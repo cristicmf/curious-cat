@@ -137,6 +137,21 @@ domain = www.myserver.com
 root_url = %(protocol)s://%(domain)s/grafana
 ````
 
+#### provisioning
+```
+# folder that contains provisioning config files that grafana will apply on startup and while running.
+;provisioning = conf/provisioning
+```
+#### tools
+
+```
+Puppet	https://forge.puppet.com/puppet/grafana
+Ansible	https://github.com/cloudalchemy/ansible-grafana
+Chef	https://github.com/JonathanTron/chef-grafana
+Saltstack	https://github.com/salt-formulas/salt-formula-grafana
+Jsonnet	https://github.com/grafana/grafonnet-lib/
+```
+
 ---
 
 ## influxDB+telegraf 
