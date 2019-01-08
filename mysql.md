@@ -148,3 +148,9 @@ $ sudo firewall-cmd --reload
 ```
 SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.user;
 ```
+
+##### 将数据库授权
+
+```
+grant rights on database.* to user@host identified by "pass"; 
+```
