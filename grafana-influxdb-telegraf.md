@@ -1,7 +1,6 @@
-## Install
-###### 默认要求使用 7.2以上版本
+## 1.Install
 
-### 1. influxdb
+### 1.1. influxdb
 
 ```
 sudo yum install influxdb
@@ -13,14 +12,14 @@ sudo systemctl start influxdb
 > influx
 ```
 
-### 2. Telegraf 修改版本
+### 1.2. Telegraf 修改版本
 ```
 wget https://dl.influxdata.com/telegraf/releases/telegraf-1.9.1_linux_amd64.tar.gz
         tar xf telegraf-1.9.1_linux_amd64.tar.gz
 telegraf -version
 ```
 
-#### 2.1 启动服务 
+#### 1.2.3 启动服务 
 
 config: /etc/telegraf/telegraf.conf
 
@@ -30,18 +29,18 @@ sudo systemctl status telegraf
 sudo systemctl enable telegraf
 ```
 
-###  3. Grafana 修改版本
-#### 3.1 安装grafana
+###  1.3. Grafana 修改版本
+#### 1.3.1 安装grafana
 ```
 wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.1.2-1.x86_64.rpm 
 ```
-#### 3.2 启动服务、添加开机启动：
+#### 1.3.2 启动服务、添加开机启动：
 ```
 systemctl enable grafana-server
 systemctl start grafana-server
 ```
 
-#### 3.3 配置说明
+#### 1.3.3 配置说明
 ```
 # 配置文件 /etc/grafana/grafana.ini
 # systemd服务名 grafana-server.service
@@ -49,7 +48,7 @@ systemctl start grafana-server
 # 默认数据库文件 /var/lib/grafana/grafana.db
 ```
 
-#### 3.4 add plugin
+#### 1.3.4 add plugin
 添加插件
 
 ```
@@ -60,10 +59,8 @@ sudo systemctl restart grafana-server
 
 
 ---
-
-
-## grafana
-### Metric
+## 2. grafana 需要关注的几个点
+### 2.1 Metric
 
 For Mode there are three options:
 
@@ -75,23 +72,12 @@ often called buckets or bins.
 Taller bars show that more data falls in that range. Histograms and buckets are described in more detail here.
 
 
-### how to get the parameter from the url
 
-###### like
-
-Use  Url http://servername:3000/dashboard/db/dashboard?refresh=10s&var-node=hanoi
-
-In Query: use where clause as shown below:
-
-```
-WHERE "system_id" =~ /^$node$/
-```
-
-### Variables
+### 2.2 Variables
 Variables are shown as dropdown select boxes at the top of the dashboard. These dropdowns make it easy to change the data being displayed in your dashboard.
 
 
-### templating
+### 2.3 templating
 时间间隔
 ```
 1. 选择 New 按钮新建一个模板变量
@@ -116,12 +102,46 @@ Preview of values 可以预览这个字段的所有值
 
 [templating](http://docs.grafana.org/reference/templating/)
 
-### nginx 反向代理到grafana
+#### 2.4 provisioning
+1. edit the config grafana.ini
+```
+# folder that contains provisioning config files that grafana will apply on startup and while running.
+;provisioning = conf/provisioning
+```
+2. add the dashborads.yaml and db.yaml file, location in `/etc/grafana/provisioning/dashborads` and `/etc/grafana/provisioning/databases`
 
-grafana配置nginx反向代理
+
+## 3. 常见问题
+### 3.1 how to get the parameter from the url
+for example, nodename
+1. set `Custom Variables` ,name as `nodename`
+2. add the parameter `var-nodename=“test”`,such as
+```
+Use  Url http://servername:3000/dashboard/db/dashboard?refresh=10s&var-nodename=“test”
+```
+
+
+3. In Query: use where clause as shown below:
+```
+WHERE nodename =$nodename
+```
+you can see the output
+
+```
+select * 
+from table
+where nodename ="test"
+```
+
+
+
+### 3.2 nginx 反向代理到 grafana
+
+grafana配置nginx反向代理 
+
 将grafana配到www.myserver.com域名的/grafana/的location下
 
-##### nginx配置
+1. nginx配置
 ```
 location /grafana/ {
                 proxy_pass http://grafana_server:3000/;
@@ -129,7 +149,7 @@ location /grafana/ {
         }
 ```
 
-##### grafana配置文件修改
+2. grafana配置文件修改
 
 ```
 #在/etc/grafana/grafana.ini配置文件中修改
@@ -137,105 +157,15 @@ domain = www.myserver.com
 root_url = %(protocol)s://%(domain)s/grafana
 ````
 
-#### provisioning
-```
-# folder that contains provisioning config files that grafana will apply on startup and while running.
-;provisioning = conf/provisioning
-```
-#### tools
 
-```
-Puppet	https://forge.puppet.com/puppet/grafana
-Ansible	https://github.com/cloudalchemy/ansible-grafana
-Chef	https://github.com/JonathanTron/chef-grafana
-Saltstack	https://github.com/salt-formulas/salt-formula-grafana
-Jsonnet	https://github.com/grafana/grafonnet-lib/
-```
 
 ---
 
-## influxDB+telegraf 
+## 4. influxDB+telegraf 
 
 ![image](https://www.influxdata.com/wp-content/uploads/Tick-Stack-Telegraf-2.png)
 
-```
-- cpu[units: percent (out of 100)]
-    - usage_guest      float
-    - usage_guest_nice float
-    - usage_idle       float
-    - usage_iowait     float
-    - usage_irq        float
-    - usage_nice       float
-    - usage_softirq    float
-    - usage_steal      float
-    - usage_system     float
-    - usage_user       float
-- disk
-    - free         integer
-    - inodes_free  integer
-    - inodes_total integer
-    - inodes_used  integer
-    - total        integer
-    - used         integer
-    - used_percent float
-- diskio
-    - io_time          integer
-    - iops_in_progress integer
-    - read_bytes       integer
-    - read_time        integer
-    - reads            integer
-    - weighted_io_time integer
-    - write_bytes      integer
-    - write_time       integer
-    - writes           integer
-- kernel
-    - boot_time        integer
-    - context_switches integer
-    - entropy_avail    integer
-    - interrupts       integer
-    - processes_forked integer
-- mem
-    - active            integer
-    - available         integer
-    - available_percent float
-    - buffered          integer
-    - cached            integer
-    - free              integer
-    - inactive          integer
-    - slab              integer
-    - total             integer
-    - used              integer
-    - used_percent      float
-    - wired             integer
-- processes
-    - blocked       integer
-    - dead          integer
-    - idle          integer
-    - paging        integer
-    - running       integer
-    - sleeping      integer
-    - stopped       integer
-    - total         integer
-    - total_threads integer
-    - unknown       integer
-    - zombies       integer
-- swap
-    - free         integer
-    - in           integer
-    - out          integer
-    - total        integer
-    - used         integer
-    - used_percent float
-- system
-    - load1         float
-    - load15        float
-    - load5         float
-    - n_cpus        integer
-    - n_users       integer
-    - uptime        integer
-    - uptime_format string
-
-```
+POLICY
 
 ```
 > CREATE RETENTION POLICY "2h0m0s" ON "telegraf" DURATION 2h REPLICATION 1 DEFAULT
@@ -259,7 +189,7 @@ time                host             usage_system
 SELECT 100 - usage_idel FROM "autogen"."cpu" WHERE time > now() - 1m and "cpu"='cpu0'
 ```
 
-#### COMMAND
+### 4.1 COMMAND
 ```
 SHOW MEASUREMENTS  --查询当前数据库中含有的表
 SHOW FIELD KEYS --查看当前数据库所有表的字段
@@ -294,11 +224,20 @@ SHOW SUBSCRIPTIONS
 ```
 
 ---
-### 工具
-[quick install](https://github.com/samuelebistoletti/docker-statsd-influxdb-grafana)
+### 4.2grafana tools
 
 
-#### issue
+```
+- [Puppet](https://forge.puppet.com/puppet/grafana)
+- [Ansible](https://github.com/cloudalchemy/ansible-grafana)
+- [Chef](https://github.com/JonathanTron/chef-grafana)
+- [Saltstack](https://github.com/salt-formulas/salt-formula-grafana)
+- [Jsonnet](https://github.com/grafana/grafonnet-lib/)
+- [quick install](https://github.com/samuelebistoletti/docker-statsd-influxdb-grafana)
+
+```
+
+#### 4.2.1 [quick install](https://github.com/samuelebistoletti/docker-statsd-influxdb-grafana)
 
 Centos 7 docker 启动grafana容器报"iptables No chain/target/match by that name"
 
@@ -307,7 +246,7 @@ docker run -d -p 3000:3000  grafana/grafana:5.1.0
 Error response from daemon: Cannot start container 565c06efde6cd4411e2596ef3d726817c58dd777bc5fd13762e0c34d86076b9e: iptables failed: iptables --wait -t nat -A DOCKER -p tcp -d 0/0 --dport 3888 -j DNAT --to-destination 192.168.42.11:3888 ! -i docker0: iptables: No chain/target/match by that name
 ```
 
-##### 解决方法：
+#### 4.2.2 解决方法：
 
 vim /etc/sysconfig/iptables
 
@@ -344,9 +283,9 @@ COMMIT
 ```
 
 
-### remove
+## 5. remove 
 
-#### remove influxdb
+### 5.1 remove influxdb
 卸载命令：
 
 ```
@@ -386,12 +325,12 @@ kill -9 $id
 echo "Process name=$name($id) kill!"
 exit 0
 ```
-#### remove grafana
+###  5.2remove grafana
 移除命令
 ```
 sudo yum remove grafana
 ```
-#### remove telegraf
+###  5.3remove telegraf
 ```
 sudo yum remove telegraf
 ```
