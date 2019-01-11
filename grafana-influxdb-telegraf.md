@@ -349,11 +349,13 @@ COMMIT
 #### remove influxdb
 卸载命令：
 
+```
 [root@localhost shared]# rpm -q influxdb 
 influxdb-0.8.7-1.x86_64 
 [root@localhost shared]# rpm -e influxdb 
 [root@localhost shared]# rpm -q influxdb 
 package influxdb is not installed
+```
 
 参数说明：
 
@@ -363,11 +365,27 @@ package influxdb is not installed
 如果恰好有多个包叫同样的名字，使用 rpm -e --allmatches --nodeps <包的名字> 删除所有相同名字的包， 并忽略依赖
 删除完后，清除已有文件：
 
+```
 [root@localhost opt]# ls 
 influxdb 
 [root@localhost opt]# rm -rf influxdb 
 [root@localhost opt]# ls
+````
+处理端口占用
 
+```
+name=$(lsof -i:8086|tail -1|awk '"$1"!=""{print $2}')
+if [ -z $name ]
+then
+	echo "No process can be used to killed!"
+	exit 0
+fi
+id=$(lsof -i:8086|tail -1|awk '"$1"!=""{print $2}')
+kill -9 $id
+ 
+echo "Process name=$name($id) kill!"
+exit 0
+```
 #### remove grafana
 移除命令
 ```
