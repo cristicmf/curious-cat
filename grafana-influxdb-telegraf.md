@@ -189,9 +189,7 @@ time                host             usage_system
 SELECT 100 - usage_idel FROM "autogen"."cpu" WHERE time > now() - 1m and "cpu"='cpu0'
 ```
 
-### 4.1 分布式上报
-
-
+### 4.1 监听多台服务
 
 1. 在需要监控的机器上面安装对应的telegraf
 2. 并且配置上报的influxdb的机器和数据库
@@ -216,7 +214,9 @@ password = “gPHhbeh” #数据库密码
 
 #user_agent = “telegraf” #采集器代理名称
 ```
+
 练习
+
 1. A机器部署`influxdb+telegraf` 
 ```
 > influx
@@ -227,15 +227,15 @@ password = “gPHhbeh” #数据库密码
 
 2. B机器部署`telegraf` 
 3. 在B机器，修改`telegraf` `influxdb`地址，使用默认telegraf
-4. 重启机器B机器
+4. 重启机器B 的`telegraf`机器
 进入A机器
 ```
 > influx
 > use telegraf;
 > SHOW TAG VALUES FROM system WITH KEY=host
-# 可以看到两台主机的信息
-```
 
+```
+- 上面查询主机的信息1条--> 两条主机信息，说明操作成功
 
 
 #### 4.1.1 COMMAND
