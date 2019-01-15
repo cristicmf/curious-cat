@@ -189,7 +189,56 @@ time                host             usage_system
 SELECT 100 - usage_idel FROM "autogen"."cpu" WHERE time > now() - 1m and "cpu"='cpu0'
 ```
 
-### 4.1 COMMAND
+### 4.1 分布式上报
+
+
+
+1. 在需要监控的机器上面安装对应的telegraf
+2. 并且配置上报的influxdb的机器和数据库
+```
+#Configuration for influxdb server to send metrics to 
+
+[[outputs.influxdb]] 
+
+urls = [“http://1x.xxx:8086”] #influxdb地址 
+
+database = “telegraf_ali” # required #influxdb数据库 
+
+retention_policy = “”#数据保留策略 
+
+write_consistency = “any” #数据写入策略，仅适用于集群模式 
+
+timeout = “5s” #写入超时策略 
+
+username = “telegraf_ali” #数据库用户名 
+
+password = “gPHhbeh” #数据库密码 
+
+#user_agent = “telegraf” #采集器代理名称
+```
+练习
+1. A机器部署`influxdb+telegraf` 
+```
+> influx
+> use telegraf;
+> SHOW TAG VALUES FROM system WITH KEY=host
+# 可以看到一台主机的信息
+```
+
+2. B机器部署`telegraf` 
+3. 在B机器，修改`telegraf` `influxdb`地址，使用默认telegraf
+4. 重启机器B机器
+进入A机器
+```
+> influx
+> use telegraf;
+> SHOW TAG VALUES FROM system WITH KEY=host
+# 可以看到两台主机的信息
+```
+
+
+
+#### 4.1.1 COMMAND
 ```
 SHOW MEASUREMENTS  --查询当前数据库中含有的表
 SHOW FIELD KEYS --查看当前数据库所有表的字段
@@ -224,7 +273,7 @@ SHOW SUBSCRIPTIONS
 ```
 
 ---
-### 4.2grafana tools
+### 4.2 grafana tools
 
 
 ```
