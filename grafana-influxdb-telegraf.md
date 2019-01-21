@@ -157,6 +157,25 @@ domain = www.myserver.com
 root_url = %(protocol)s://%(domain)s/grafana
 ````
 
+### 3.3 进行授权
+进用户授权行授权，比如说，部分用户可以进行匿名进行访问页面。
+
+1. 修改`grafana.ini`的配置
+```
+[auth.anonymous]
+# 设置允许匿名
+enabled = true
+
+# 设置允许匿名的组织
+org_name = Main Org.
+
+# 设置允许匿名的组织角色
+org_role = Viewer
+```
+2. 重启
+```
+systemctl restart grafana-server
+```
 
 
 ---
