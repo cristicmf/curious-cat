@@ -17,6 +17,15 @@ Net Internals 是一套工具集合，用于帮助诊断网络请求与访问方
 
 
 
+`provisional headers are shown`出现的情况
+
+```
+跨域，请求被浏览器拦截
+请求被浏览器插件拦截
+服务器出错或者超时，没有真正的返回
+强缓存from disk cache或者from memory cache，此时也不会显示
+```
+
 ---
 
 ## 前端基础
