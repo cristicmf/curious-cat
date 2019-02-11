@@ -1,7 +1,7 @@
 
 # 前端学习
 ## 踩过的坑
-#### 1. Provisional headers are shown
+### 1. Provisional headers are shown
 
 场景：打开一个页面，发送一个请求，出现`Provisional headers are shown`
 
@@ -25,6 +25,10 @@ Net Internals 是一套工具集合，用于帮助诊断网络请求与访问方
 服务器出错或者超时，没有真正的返回
 强缓存from disk cache或者from memory cache，此时也不会显示
 ```
+### 2. HTML5页面调起APP
+- [HTML5页面调起APP](https://segmentfault.com/a/1190000009496897)
+- [可以参考的库](https://github.com/cristicmf/html-page-call-native)
+
 
 ---
 
