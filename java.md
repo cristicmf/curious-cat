@@ -1,4 +1,4 @@
-## 拦截器
+## 1. 拦截器的使用
 
 - [在springBoot 2里添加拦截器](https://blog.csdn.net/qq_36013216/article/details/79866114)
 
@@ -53,10 +53,10 @@ public class HandShakeInterceptor implements HandshakeInterceptor {
 }
 ```
 ---
-### Spring AOP注解失效及解决
+## 2. Spring AOP注解失效及解决
 基于以上对于动态代理原理的分析，我们来看以下两个常见的问题：
 
-##### 同一个类中，方法A调用方法B（方法B上加有注解），注解无效
+### 同一个类中，方法A调用方法B（方法B上加有注解），注解无效
 
 针对所有的Spring AOP注解，Spring在扫描bean的时候如果发现有此类注解，那么会动态构造一个代理对象。
 
