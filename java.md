@@ -3,12 +3,13 @@
 - [在springBoot 2里添加拦截器](https://blog.csdn.net/qq_36013216/article/details/79866114)
 
 ## 说明
+```
+/*
 @Configuration  //指明该类为Spring 配置类
 @Component //泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。 
 @EnableWebSocket  //声明该类支持WebSocket
+/*
 
-
-```
 @Configuration
 @EnableWebSocket
 @Component
@@ -236,3 +237,15 @@ public class Main {
 7、BindException：address already in use
 
      抛出此类异常，表示端口已经被占用
+     
+ 
+ ### 5. 遍历Map
+ 遍历Map时用到了Map.Entry 和 Map.entrySet() ，记得只见过Map.KeySet()和values()这两个方法，于是到API中一看，Map.entrySet() 这个方法返回的是一个Set<Map.Entry<K,V>>，Map.Entry 是一个接口，他的用途是表示一个映射项（里面有Key和Value），而Set<Map.Entry<K,V>>表示一个映射项的Set。Map.Entry里有相应的getKey和getValue方法.
+```
+        for(Map.Entry item : m.entrySet()) {
+
+            t.append(item.getKey() + ": " + item.getValue() + "/n");
+
+        }
+
+```
