@@ -123,3 +123,76 @@ public class Application {
 - IoC的一个重点是在系统运行中，动态的向某个对象提供它所需要的其他对象，是通过DI（Dependency Injection，依赖注入）来实现的。
 - 创建合作对象B的工作是由Spring来做的，Spring创建好B对象，然后存储到一个容器里面，当A对象需要使用B对象时，Spring就从存放对象的那个容器里面取出A要使用的那个B对象，然后交给A对象使用，至于Spring是如何创建那个对象，以及什么时候创建好对象的，A对象不需要关心这些细节问题(你是什么时候生的，怎么生出来的我可不关心，能帮我干活就行)，A得到Spring给我们的对象之后，两个人一起协作完成要完成的工作即可。
 - 控制反转IoC(Inversion of Control)是说创建对象的控制权进行转移，以前创建对象的主动权和创建时机是由自己把控的，而现在这种权力转移到第三方，比如转移交给了IoC容器，它就是一个专门用来创建对象的工厂，你要什么对象，它就给你什么对象，有了IoC容器，依赖关系就变了，原先的依赖关系就没了，它们都依赖IoC容器了，通过IoC容器来建立它们之间的关系。
+
+### 内部类持有外部类的引用,获取Java匿名内部类持有的外部类对象
+
+```
+class Outer {
+    static class Inner {
+        public String publicString = "Inner.publicString";
+    }
+ 
+    static Other anonymousOther = new Other() {
+        public String publicString = "Anonymous Other.publicString";
+    };
+ 
+    public Other getAnonymousOther() {
+        return anonymousOther;
+    }
+ 
+    Other Other = new Other();
+    public Other getOther() {
+        return Other;
+    }
+}
+ 
+class Other {
+    public String publicString = "Other.publicString";
+}
+
+
+public static void main(String args[]) {
+        printField(new Outer.Inner());
+        System.out.println("\t");
+        printField(new Outer().getAnonymousOther());
+        System.out.println("\t");
+        printField(new Outer().getOther());
+    }
+```
+
+第二部分
+```
+public interface Callback {
+    void callback(String s);
+}
+
+
+public class Main {
+
+    private String mName;
+
+    public Main(String name) {
+        mName = name;
+    }
+
+    public static void main(String[] args) {
+        Main main = new Main("Main");
+        main.test();
+    }
+
+    private void test() {
+        Callback callback = new Callback() {
+
+            @Override
+            public void callback(String s) {
+                System.out.println(getName());
+            }
+        };
+        callback.callback("");
+    }
+
+    private String getName() {
+        return mName;
+    }
+}
+```
