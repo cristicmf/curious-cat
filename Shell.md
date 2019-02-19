@@ -175,4 +175,11 @@ vim /etc/my.cnf
  mysql -uroot -pyellowcong
  ```
 
-
+---
+crudini
+```
+crudini --set [--existing] config_file section [param] [value]
+crudini --get [--format=sh|ini] config_file [section] [param]
+crudini --del [--existing] config_file section [param]
+crudini --merge [--existing] config_file [section]
+```
