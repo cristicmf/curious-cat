@@ -158,3 +158,13 @@ SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.u
 ```
 grant rights on database.* to user@host identified by "pass"; 
 ```
+
+
+This is the set root password that you will perform inside mysql if you have MySQL 5.6 or below:
+
+mysql> update user set Password=PASSWORD('new-password') where user='root';
+flush privileges;
+In MySQL 5.7 or above
+
+mysql> update user set authentication_string=PASSWORD('new-password') where user='root';
+flush privileges;
