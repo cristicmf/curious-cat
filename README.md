@@ -10,7 +10,7 @@
 ---
 ### 协议
 - [STOMP](https://github.com/cristicmf/stompjs) 
-- MMQT
+- MQTT
 
 ### 中间件分析和总结
 
