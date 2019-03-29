@@ -12,6 +12,9 @@
 - [STOMP](https://github.com/cristicmf/stompjs) 
 - MQTT
 
+### 边缘计算
+- [EdgeComputing](https://github.com/cristicmf/curious-cat/blob/master/EdgeComputing.md)
+
 ### 中间件分析和总结
 
 
