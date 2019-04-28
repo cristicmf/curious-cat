@@ -73,7 +73,7 @@ $ docker save 9610cfc68e8d > /data/app/meifen/my_centos-export-0428.tar
 现在就可以在任何装 docker 的地方加载 刚保存的镜像了
 
 ```
-$ docker load < /home/myubuntu-save-1204.tar
+$ docker load < /home/my_centos-export-0428.tar
 ```
 
 
