@@ -1,5 +1,5 @@
-## 脚本化一键部署
-### Docker
+# 脚本化一键部署
+## Docker
 - install Docker
 
 参照官网
@@ -23,7 +23,7 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
 
 
 
-###  开发思路
+##  开发思路
 ```
 1 寻找基础镜像
 2 基于基础镜像编写Dockerfile脚本
@@ -34,7 +34,7 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
 
 思路：使用 centos 容器安装对应的软件环境，最后将环境导出。
 
-#### 操作步骤
+### 操作步骤
 
 1.  创建容器
 ```
@@ -88,7 +88,7 @@ save 和 export区别
 
 export导出的镜像文件大小  小于 save保存的镜像。export 导出（import导入）是根据容器拿到的镜像，再导入时会丢失镜像所有的历史，所以无法进行回滚操作（docker tag <LAYER ID> <IMAGE NAME>）；而save保存（load加载）的镜像，没有丢失镜像的历史，可以回滚到之前的层（layer）。（查看方式：docker images --tree） 。export 只导出当前的信息
 
-### 提交Docker-hub
+## 提交Docker-hub
 1. 提交镜像
 ```
 $ docker commit -a "cristic" -m "commit content"  801a40ffa673  cristicmei/name:v1.0.0
@@ -109,13 +109,13 @@ $ docker image
 $ docker push cristicmei/name:v1.0.0
 ```
 ---
-### docker 架构说明
+## docker 架构说明
 ![image](https://www.hi-linux.com/img/linux/docker-arch1.jpg)
 
 [更多架构说明](https://www.hi-linux.com/posts/13732.html)
 
----
-### ISSUE
+
+##  ISSUE
 
 #### /var/lib/docker/overlay2 占用很大，清理Docker占用的磁盘空间，迁移 /var/lib/docker 目录
 
