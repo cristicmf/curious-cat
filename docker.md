@@ -23,18 +23,15 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
 
 ---
 ###  开发思路
-
+```
 1 寻找基础镜像
 2 基于基础镜像编写Dockerfile脚本
 3 根据Dockerfile脚本创建项目镜像
 4 将创建的镜像推送到docker仓库 (根据自身需要，可做可不做)
 5 基于项目镜像创建并运行docker容器 (实现最终部署)
+```
 
-思路：
-使用 centos 容器安装对应的软件环境，最后将环境导出。
-
-
-
+思路：使用 centos 容器安装对应的软件环境，最后将环境导出。
 
 #### 操作步骤
 
@@ -78,14 +75,19 @@ $ docker load < /home/my_centos-export-0428.tar
 
 
 镜像和容器 导出和导入的区别
-镜像导入和容器导入的区别：
-1）容器导入 是将当前容器 变成一个新的镜像
-2）镜像导入 是复制的过程
-save 和 export区别：
-1）save 保存镜像所有的信息-包含历史
-2）export 只导出当前的信息
+
+1 容器导入 是将当前容器变成一个新的镜像
+2 镜像导入 是复制的过程
+
+save 和 export区别
+
+1 save 保存镜像所有的信息-包含历史
+2 export 只导出当前的信息
 
 说明： export导出的镜像文件大小  小于 save保存的镜像。export 导出（import导入）是根据容器拿到的镜像，再导入时会丢失镜像所有的历史，所以无法进行回滚操作（docker tag <LAYER ID> <IMAGE NAME>）；而save保存（load加载）的镜像，没有丢失镜像的历史，可以回滚到之前的层（layer）。（查看方式：docker images --tree） 。export 只导出当前的信息
+
+---
+### docker 常用命令
 
 ---
 ### docker 架构说明
