@@ -8,6 +8,7 @@
 
 安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。
 
+
 阿里云上没有附Help说明连接，简单摸索了下，如下设置可用（centos）。注意不要开启check。
 ```
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -21,7 +22,7 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
 ```
 
 
----
+
 ###  开发思路
 ```
 1 寻找基础镜像
@@ -35,18 +36,18 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
 
 #### 操作步骤
 
-- 创建容器
+1.  创建容器
 ```
 $ docker pull centos    
 $ sudo docker run --privileged --cap-add SYS_ADMIN -e container=docker -it --name my_centos -p 80:8080  -d  --restart=always centos:7 /usr/sbin/init 
 ```
 
-- 启动容器
+2.  启动容器
 ```
 $ docker exec -it my_centos /bin/bash
 ```
 
-- 导出和导入
+3.  导出和导入
 ```
 $ docker export my_centos > /data/app/meifen/my_centos-export-0428.tar
 
@@ -54,7 +55,7 @@ $ docker import  /data/app/meifen/my_centos-export-0428.tar
 
 ```
 
-- 保存save 
+4.  保存save 
 
 格式：docker save IMAGE(镜像)
 
@@ -74,6 +75,7 @@ $ docker load < /home/my_centos-export-0428.tar
 ```
 
 
+**其他说明**
 镜像和容器 导出和导入的区别
 
 1 容器导入 是将当前容器变成一个新的镜像
@@ -84,14 +86,14 @@ save 和 export区别
 1 save 保存镜像所有的信息-包含历史
 2 export 只导出当前的信息
 
-说明： export导出的镜像文件大小  小于 save保存的镜像。export 导出（import导入）是根据容器拿到的镜像，再导入时会丢失镜像所有的历史，所以无法进行回滚操作（docker tag <LAYER ID> <IMAGE NAME>）；而save保存（load加载）的镜像，没有丢失镜像的历史，可以回滚到之前的层（layer）。（查看方式：docker images --tree） 。export 只导出当前的信息
+export导出的镜像文件大小  小于 save保存的镜像。export 导出（import导入）是根据容器拿到的镜像，再导入时会丢失镜像所有的历史，所以无法进行回滚操作（docker tag <LAYER ID> <IMAGE NAME>）；而save保存（load加载）的镜像，没有丢失镜像的历史，可以回滚到之前的层（layer）。（查看方式：docker images --tree） 。export 只导出当前的信息
 
----
 ### 提交Docker-hub
 1. 提交镜像
 ```
 $ docker commit -a "cristic" -m "commit content"  801a40ffa673  cristicmei/name:v1.0.0
 ```
+
 2. 查看镜像
 ```
 $ docker images
@@ -100,6 +102,8 @@ $ docker images
 ```
 $ docker image
 ```
+前提是用户有docker-hub的账号
+
 4. 提交远程仓库
 ```
 $ docker push cristicmei/name:v1.0.0
@@ -112,25 +116,8 @@ $ docker push cristicmei/name:v1.0.0
 
 ---
 ### ISSUE
-- install kubernetes
 
-安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。
-
-阿里云上没有附Help说明连接，简单摸索了下，如下设置可用（centos）。注意不要开启check。
-```
-cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=0
-repo_gpgcheck=0
-gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
-        http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-EOF
-```
-
-- /var/lib/docker/overlay2 占用很大，清理Docker占用的磁盘空间，迁移 /var/lib/docker 目录
+#### /var/lib/docker/overlay2 占用很大，清理Docker占用的磁盘空间，迁移 /var/lib/docker 目录
 
 1.命令查看磁盘使用情况
 ```
