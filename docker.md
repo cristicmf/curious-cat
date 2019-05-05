@@ -88,14 +88,22 @@ save 和 export区别
 
 ---
 ### 提交Docker-hub
-
-- Login
+1. 提交镜像
 ```
-$ docker login
-....
+$ docker commit -a "cristic" -m "commit content"  801a40ffa673  cristicmei/name:v1.0.0
 ```
-
-
+2. 查看镜像
+```
+$ docker images
+```
+3. 登录docker-hub
+```
+$ docker image
+```
+4. 提交远程仓库
+```
+$ docker push cristicmei/name:v1.0.0
+```
 ---
 ### docker 架构说明
 ![image](https://www.hi-linux.com/img/linux/docker-arch1.jpg)
