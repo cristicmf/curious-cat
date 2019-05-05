@@ -87,7 +87,14 @@ save 和 export区别
 说明： export导出的镜像文件大小  小于 save保存的镜像。export 导出（import导入）是根据容器拿到的镜像，再导入时会丢失镜像所有的历史，所以无法进行回滚操作（docker tag <LAYER ID> <IMAGE NAME>）；而save保存（load加载）的镜像，没有丢失镜像的历史，可以回滚到之前的层（layer）。（查看方式：docker images --tree） 。export 只导出当前的信息
 
 ---
-### docker 常用命令
+### 提交Docker-hub
+
+- Login
+```
+$ docker login
+....
+```
+
 
 ---
 ### docker 架构说明
@@ -114,3 +121,32 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
         http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 ```
+
+- /var/lib/docker/overlay2 占用很大，清理Docker占用的磁盘空间，迁移 /var/lib/docker 目录
+
+1.命令查看磁盘使用情况
+```
+$ du -hs /var/lib/docker/ 
+```
+
+用于查看Docker的磁盘使用情况
+```
+$ docker system df
+
+```
+
+
+2. 清理磁盘
+
+```
+$ docker system prune 
+```
+可以用于清理磁盘，删除关闭的容器、无用的数据卷和网络，以及dangling镜像(即无tag的镜像)。
+
+```
+$ docker system prune -a
+```
+
+3. 迁移 /var/lib/docker 目录
+
+
