@@ -108,11 +108,27 @@ $ docker image
 ```
 $ docker push cristicmei/name:v1.0.0
 ```
----
+## 优化
+- 最重要的因素是减少镜像的层数，这样能大大减小镜像的大小；
+
+使用链式代码“&&”把多行指令结合成一行
+
+- 清除 yum 缓存
+```
+$ yum clean headers
+$ yum clean packages
+$ yum clean all
+```
+
+- 清除无用的tar.gz安装包
+- 选择更小的基础镜像
+
 ## docker 架构说明
 ![image](https://www.hi-linux.com/img/linux/docker-arch1.jpg)
 
 [更多架构说明](https://www.hi-linux.com/posts/13732.html)
+
+
 
 
 ##  ISSUE
