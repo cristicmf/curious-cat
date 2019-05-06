@@ -110,7 +110,7 @@ $ docker push cristicmei/name:v1.0.0
 ```
 ## 精简Docker镜像大小的必要性
 
-Docker镜像由很多镜像层（Layers）组成（最多127层），镜像层依赖于一系列的底层技术，比如文件系统（filesystems）、写时复制（copy-on-write）、联合挂载（union mounts）等技术，你可以查看Docker社区文档以了解更多有关Docker存储驱动的内容，这里就不再赘述技术细节。总的来说，Dockerfile中的每条指令都会创建一个镜像层，继而会增加整体镜像的尺寸。
+Docker镜像由很多镜像层（Layers）组成（最多127层），镜像层依赖于一系列的底层技术，比如文件系统（filesystems）、写时复制（copy-on-write）、联合挂载（union mounts）等技术，可以查看Docker社区文档以了解更多有关Docker存储驱动的内容，这里不再赘述。总的来说，Dockerfile中的每条指令都会创建一个镜像层，继而会增加整体镜像的尺寸。
 
 下面是精简Docker镜像尺寸的好处：
 ```
