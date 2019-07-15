@@ -66,16 +66,20 @@ $ sudo systemctl status mysqld
 
 ### 4.修改 root 默认密码
 MySQL 5.7 启动后，在 /var/log/mysqld.log 文件中给 root 生成了一个默认密码。通过下面的方式找到 root 默认密码，然后登录 mysql 进行修改：
+```
 $ grep 'temporary password' /var/log/mysqld.log
 [Note] A temporary password is generated for root@localhost: **********
+```
 
 登录 MySQL 并修改密码
+```
 $ mysql -u root -p
 Enter password: 
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
-
+```
 注意：MySQL 5.7 默认安装了密码安全检查插件（validate_password），默认密码检查策略要求密码必须包含：大小写字母、数字和特殊符号，并且长度不能少于 8 位。
 通过 MySQL 环境变量可以查看密码策略的相关信息：
+```
 mysql> SHOW VARIABLES LIKE 'validate_password%';
 +--------------------------------------+--------+
 | Variable_name                        | Value  |
@@ -89,19 +93,24 @@ mysql> SHOW VARIABLES LIKE 'validate_password%';
 | validate_password_special_char_count | 1      |
 +--------------------------------------+--------+
 7 rows in set (0.01 sec)
+```
 
 具体修改，参见 http://dev.mysql.com/doc/refman/5.7/en/validate-password-options-variables.html#sysvar_validate_password_policy
 指定密码校验策略
+```
 $ sudo vi /etc/my.cnf
 
 [mysqld]
+```
 ###### 添加如下键值对, 0=LOW, 1=MEDIUM, 2=STRONG
 validate_password_policy=0
 
 禁用密码策略
+```
 $ sudo vi /etc/my.cnf
 	
 [mysqld]
+```
 ###### 禁用密码校验策略
 validate_password = off
 
@@ -110,20 +119,24 @@ $ sudo systemctl restart mysqld
 
 ### 5.添加远程登录用户
 MySQL 默认只允许 root 帐户在本地登录，如果要在其它机器上连接 MySQL，必须修改 root 允许远程连接，或者添加一个允许远程连接的帐户，为了安全起见，本例添加一个新的帐户：
+```
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' IDENTIFIED BY 'secret' WITH GRANT OPTION;
-
+```
 ### 6.配置默认编码为 utf8
 MySQL 默认为 latin1, 一般修改为 UTF-8
 $ vi /etc/my.cnf
 [mysqld]
 ######  在myslqd下添加如下键值对
+```
 character_set_server=utf8
 init_connect='SET NAMES utf8'
-
+```
 重启 MySQL 服务，使配置生效
+```
 $ sudo systemctl restart mysqld
-
+```
 查看字符集
+
 mysql> SHOW VARIABLES LIKE 'character%';
 ```
 +--------------------------+----------------------------+
@@ -142,9 +155,10 @@ mysql> SHOW VARIABLES LIKE 'character%';
 ```
 
 ### 7.开启端口
+```
 $ sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
 $ sudo firewall-cmd --reload
-
+```
 
 
 ---
