@@ -24,7 +24,8 @@
 
 GPL、BSD、MIT、Mozilla、Apache和LGPL
 
-### GitHub Badge
+### 增加徽章
+用户可以根据需要增加适用的徽章。
 #### 常用动态徽章
 ``` 
 持续集成状态 (Travis CI)
