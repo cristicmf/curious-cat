@@ -1,7 +1,8 @@
 ### 🍕 CCSCI
-- [智能合约注意事项](https://github.com/cristicmf/knitmesh/blob/master/SmartContract.md)
+- [区块链技术智能合约入门](https://github.com/cristicmf/bcos-qucik-start-demo/blob/master/README.md)
 - [量子计算](https://github.com/cristicmf/Q-learn)
 - [EdgeComputing](https://github.com/cristicmf/curious-cat/blob/master/EdgeComputing.md)
+- [FISCO-BCOS学习资料](https://github.com/cristicmf/hackathon/blob/master/FISCO-BCOS-Resources.md)
 
 
 
