@@ -1,13 +1,13 @@
 # FISCO-BCOS Resources
 
  ## 实践步骤
- ```
+ 
  1. 部署区块链，[指导手册](https://fisco-bcos-documentation.readthedocs.io/zh_CN/latest/docs/installation.html)
  2. 合约开发，[指导手册](https://segmentfault.com/a/1190000012996636)
  3. 应用开发脚手架，[项目下载和指导手册](https://github.com/FISCO-BCOS/spring-boot-starter)
  4. 体验案例，[存证](https://github.com/FISCO-BCOS/evidenceSample)
  5. 其他，体验分布式身份标识[WeIdentity](https://github.com/WeBankFinTech/WeIdentity)和体验物联网连接器[WeEvent](https://github.com/WeBankFinTech/WeEvent)
- ```
+ 
  ### 系统要求
 
 | 配置     | 最低配置          | 推荐配置                                                     |
