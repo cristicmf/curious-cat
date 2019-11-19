@@ -21,7 +21,8 @@
 
 ### 工具
 - [grafana-influxdb-telegraf](https://github.com/cristicmf/curious-cat/blob/master/grafana-influxdb-telegraf.md)
-- [docker](https://github.com/cristicmf/curious-cat/blob/master/docker.md)
+- [docker安装](https://github.com/cristicmf/curious-cat/blob/master/docker-install.md)
+   - [docker 安装 mysql](https://github.com/cristicmf/curious-cat/blob/master/docker-mysql-install.md)
 
 ### 常用工具和技巧
 
