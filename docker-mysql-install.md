@@ -46,10 +46,9 @@ yum -y install libaio
 # chown -R root:root ./
 # chown -R mysql:mysql data
 ```
-8.# cp support-files/my-default.cnf /etc/my.cnf 
-复制过去，其实也就是空白页，一开始没有my-default.cnf这个文件，可以用# touch my-default.cnf命令创建一个，并配置权限 
-
+8.复制文件my.cnf，开始是没有my-default.cnf这个文件，需要手动创建。可以用# touch my-default.cnf命令创建一个，并配置权限。 
 ```
+# cp support-files/my-default.cnf /etc/my.cnf 
 # chmod 777 ./my-default.cnf 
 
 # cd support-files/
