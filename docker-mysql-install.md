@@ -38,7 +38,7 @@ tar -xvf mysql-8.0.13-linux-glibc2.12-x86_64.tar.xz
 
 如果出现 `error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory`。解决问题具体操作如下。
 yum -y install numactl
-yum -y install libaio
+yum -y install libnuma.so.1
 ```
 
 
