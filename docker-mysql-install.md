@@ -50,6 +50,7 @@ yum -y install numactl
 ```
 8.复制文件my.cnf，开始是没有my-default.cnf这个文件，需要手动创建。可以用# touch my-default.cnf命令创建一个，并配置权限。 
 ```
+# touch support-files/my-default.cnf
 # cp support-files/my-default.cnf /etc/my.cnf 
 # chmod 777 ./my-default.cnf 
 
