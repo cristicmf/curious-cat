@@ -172,7 +172,7 @@ export PATH=$PATH:/usr/local/mysql/bin:/usr/local/mysql/lib
 ```
 # mysql
 mysql> use mysql;
-mysql> update user set password=password("你的新密码") where user="root";
+mysql> alter user user() identified by "123456";
 
 mysql> flush privileges;
 mysql> quit
