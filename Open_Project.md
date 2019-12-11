@@ -29,6 +29,8 @@ GPL、BSD、MIT、Mozilla、Apache和LGPL
 #### 常用动态徽章
 ``` 
 持续集成状态 (Travis CI)
+Codacy  代码质量检查
+CodeFactor  代码质量检查
 项目版本信息
 开源协议
 代码测试覆盖率
@@ -63,12 +65,9 @@ colorB：控制右半部分背景颜色。
 
 - [更多信息，请查阅GitHub Badge](https://shields.io)
 
-### 常用的工具
-Travis-CI   
-Codacy  代码质量检查
-CodeFactor  代码质量检查
 
-### 测试覆盖率
+### 其他
+测试覆盖率
 
 - C++项目:
 make test + codecov
