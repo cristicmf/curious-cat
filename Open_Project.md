@@ -62,3 +62,37 @@ colorB：控制右半部分背景颜色。
 ```
 
 - [更多信息，请查阅GitHub Badge](https://shields.io)
+
+### 常用的工具
+Travis-CI   
+Codacy  代码质量检查
+CodeFactor  代码质量检查
+
+### 测试覆盖率
+
+- C++项目:
+make test + codecov
+
+- Java项目:
+gradle test + jacoco + codecov
+
+- Rust项目:
+cargo test + codecov
+使用codecov便于ci集成，报告都是以行和方法为单位生成覆盖率。
+
+```
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: ['**/test/**','**/proto/**', '**/example/**'])
+        })
+    }
+}
+```
