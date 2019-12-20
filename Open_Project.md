@@ -67,7 +67,7 @@ colorB：控制右半部分背景颜色。
 
 
 ### 其他
-测试覆盖率
+#### 测试覆盖率
 
 - C++项目:
 make test + codecov
@@ -95,3 +95,6 @@ jacocoTestReport {
     }
 }
 ```
+
+#### 贡献者管理
+展示贡献者信息，可以[使用插件](https://allcontributors.org/docs/en/emoji-key)
