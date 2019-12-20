@@ -1,16 +1,25 @@
 {
-  "files": ["CONTRIBUTING.md"],
+  "files": [
+    "CONTRIBUTING.md"
+  ],
   "imageSize": 100,
-  "contributorsPerLine": 7,
-  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
-  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><b><%= contributor.name %></b></sub></a>",
-  "types": {
-    "custom": {
-      "symbol": "🔭",
-      "description": "A custom contribution type.",
-      "link": "[<%= symbol %>](<%= url %> \"<%= description %>\"),"
-    }
-  },
-  "skipCi": "true",
-  "contributors": []
+  "commit": false,
+  "contributors": [ 
+    {
+      "login": "cristicmf",
+      "name": "cristicmf",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30070842?v=4",
+      "profile": "https://github.com/darwindu",
+      "contributions": [
+        "maintenance"
+      ]
+    },
+
+  ],
+  "contributorsPerLine": 6,
+  "projectName": "WeEvent",
+  "projectOwner": "cristicmf",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
