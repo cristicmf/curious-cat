@@ -98,3 +98,6 @@ jacocoTestReport {
 
 #### 贡献者管理
 展示贡献者信息，可以[使用插件](https://allcontributors.org/docs/en/emoji-key)
+
+
+#### 徽章
