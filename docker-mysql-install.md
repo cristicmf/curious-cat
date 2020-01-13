@@ -1,7 +1,6 @@
 1.下载mysql-8.0.13-linux-glibc2.12-x86_64.tar.xz的安装包
 
 ```
-tar -xvf mysql-8.0.13-linux-glibc2.12-x86_64.tar.xz
 
 ```
 2.解压mysql-8.0.13-linux-glibc2.12-x86_64.tar.xz
