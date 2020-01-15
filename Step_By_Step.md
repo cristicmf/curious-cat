@@ -3,6 +3,9 @@
 - 语言
   - python或者java，动手实践，很快就可以理解
 
+- 数据库
+  - mysql
+
 - 算法导论 
 	- [书籍](https://book.douban.com/subject/20432061/)
 	- [在线视频](https://www.bilibili.com/video/av75424673)
