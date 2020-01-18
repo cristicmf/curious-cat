@@ -3,7 +3,7 @@
 - [量子计算](https://github.com/cristicmf/Q-learn)
 - [EdgeComputing](https://github.com/cristicmf/curious-cat/blob/master/EdgeComputing.md)
 - [FISCO-BCOS学习资料](https://github.com/cristicmf/hackathon/blob/master/FISCO-BCOS-Resources.md)
-
+- [给初学者的区块链学习资料](https://github.com/cristicmf/curious-cat/blob/master/%E7%BB%99%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99.md)
 
 
 ### 上义
