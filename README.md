@@ -1,18 +1,21 @@
 ### 🍕 CCSCI
 - [区块链技术智能合约入门](https://github.com/cristicmf/bcos-qucik-start-demo/blob/master/README.md)
-- [量子计算](https://github.com/cristicmf/Q-learn)
-- [EdgeComputing](https://github.com/cristicmf/curious-cat/blob/master/EdgeComputing.md)
 - [FISCO-BCOS学习资料](https://github.com/cristicmf/hackathon/blob/master/FISCO-BCOS-Resources.md)
 - [给初学者的区块链学习资料](https://github.com/cristicmf/curious-cat/blob/master/%E7%BB%99%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99.md)
+- [量子计算](https://github.com/cristicmf/Q-learn)
+- [EdgeComputing](https://github.com/cristicmf/curious-cat/blob/master/EdgeComputing.md)
 
-
-### 上义
-- [开源项目注意事项](https://github.com/cristicmf/curious-cat/blob/master/Open_Project.md)
+### 上义文
 - 🥗[当我在看EDA时候，我想到了什么](https://github.com/cristicmf/curious-cat/blob/master/%E5%BD%93%E6%88%91%E5%9C%A8%E7%9C%8BEDA%E6%97%B6%E5%80%99.md)
 - 🥝[hey_FRP](https://github.com/cristicmf/curious-cat/blob/master/%E8%AE%B2%E8%AE%B2FRP_FP.md)
 - 🍕[FRP_EDA](https://github.com/cristicmf/curious-cat/blob/master/FRP_EDA.md)
 - 🥝[分布式系统](https://github.com/cristicmf/curious-cat/blob/master/distributed_applications.md)
 - 🍕[中间件分析](https://github.com/cristicmf/curious-cat/blob/master/Middleware.md)
+
+
+### 开源项目
+- [开源项目](https://github.com/cristicmf/curious-cat/blob/master/Open_Project.md)
+
 
 ### 协议
 - [STOMP](https://github.com/cristicmf/stompjs) 
