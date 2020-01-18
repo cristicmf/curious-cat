@@ -4,7 +4,7 @@
   - python或者java，动手实践，很快就可以理解
 
 - 数据库
-  - mysql
+  - 书籍：数据库系统概念
 
 - 算法导论 
 	- [书籍](https://book.douban.com/subject/20432061/)
