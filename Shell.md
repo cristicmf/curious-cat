@@ -186,23 +186,54 @@ crudini --merge [--existing] config_file [section]
 
 
 ## 安装JDK
+#### 下载
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+#### 二、卸载已有jdk
+
+1.查看已安装jdk： rpm -qa|grep java 
+
+[root@localhost software]# rpm -qa|grep java
+```
+java-1.7.0-openjdk-1.7.0.45-2.4.3.3.el6.x86_64
+java-1.6.0-openjdk-1.6.0.0-1.66.1.13.0.el6.x86_64
+tzdata-java-2013g-1.el6.noarch
+```
+
+2.卸载已有jdk:
+```
+rpm -e --nodeps java-1.7.0-openjdk-1.7.0.45-2.4.3.3.el6.x86_64 java-1.6.0-openjdk-1.6.0.0-1.66.1.13.0.el6.x86_64 tzdata-java-2013g-1.el6.noarch
+```
+
+注：如果使用 rpm -qa|grep java 命令没有查到jdk包，但是使用 java -version 命令却可以看到jdk版本，可以使用 which java 命令查看 java 命令的执行路径，然后找到对应的jdk文件并删除。
+
+#### 三、安装jdk
+
 1.将下载好的安装包 jdk-8u211-linux-x64.tar.gz 上传到服务器指定目录下；
 
 2.解压安装包： tar -zxvf jdk-8u211-linux-x64.tar.gz 
 
-3.复制安装包到 /usr/local/java/ 目录下： cp -r jdk1.8.0_211/ /usr/local/java 
+3.复制安装包到 /usr/local/java/ 目录下： 
+```
+cp -r jdk1.8.0_211/ /usr/local/java 
+cd /usr/local/java
+mv jdk1.8.0_211 jdk1.8
+```
 
 4.添加环境变量：编辑 /etc/profile 文件： vim /etc/profile ，在最后面添加：
-
-JAVA_HOME=/usr/local/java
+```
+JAVA_HOME=/usr/local/java/jdk1.8
 CLASSPATH=$JAVA_HOME/lib/
 PATH=$PATH:$JAVA_HOME/bin
+```
 export PATH JAVA_HOME CLASSPATH
 5.重新加载 /etc/profile 文件 source /etc/profile 
 
 6.使用 java -version 命令验证jdk是否安装成功:
 
 [root@localhost java]# java -version
+```
 java version "1.8.0_211"
 Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)
+```
