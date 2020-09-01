@@ -183,3 +183,26 @@ crudini --get [--format=sh|ini] config_file [section] [param]
 crudini --del [--existing] config_file section [param]
 crudini --merge [--existing] config_file [section]
 ```
+
+
+## 安装JDK
+1.将下载好的安装包 jdk-8u211-linux-x64.tar.gz 上传到服务器指定目录下；
+
+2.解压安装包： tar -zxvf jdk-8u211-linux-x64.tar.gz 
+
+3.复制安装包到 /usr/local/java/ 目录下： cp -r jdk1.8.0_211/ /usr/local/java 
+
+4.添加环境变量：编辑 /etc/profile 文件： vim /etc/profile ，在最后面添加：
+
+JAVA_HOME=/usr/local/java
+CLASSPATH=$JAVA_HOME/lib/
+PATH=$PATH:$JAVA_HOME/bin
+export PATH JAVA_HOME CLASSPATH
+5.重新加载 /etc/profile 文件 source /etc/profile 
+
+6.使用 java -version 命令验证jdk是否安装成功:
+
+[root@localhost java]# java -version
+java version "1.8.0_211"
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)
