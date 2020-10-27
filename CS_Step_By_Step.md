@@ -29,3 +29,6 @@
 ### 进阶书籍
 - 计算机程序的构造和解释（SICP）
 - 分布式系统
+
+### 其他
+- [后端架构师技术图谱](https://github.com/xingshaocheng/architect-awesome)
