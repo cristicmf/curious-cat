@@ -2,6 +2,8 @@
 
 - 语言
   - python或者java，动手实践，很快就可以理解
+  - [Java编程思想 （第4版）](https://book.douban.com/subject/2130190/)
+  - [Effective Java: Second Edition](https://book.douban.com/subject/2696119/)
 
 - 数据库
   - 书籍：数据库系统概念
@@ -17,9 +19,8 @@
 
 -  计算机网络
 	
-
 -  计算机系统
--	 《深入理解计算机系统》
+  - 《深入理解计算机系统》
 
 -  汇编语言
 
