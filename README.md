@@ -12,6 +12,9 @@
 - 🥝[分布式系统](https://github.com/cristicmf/curious-cat/blob/master/distributed_applications.md)
 - 🍕[中间件分析](https://github.com/cristicmf/curious-cat/blob/master/Middleware.md)
 
+### 项目管理
+- [研发产品流程梳理](https://github.com/cristicmf/curious-cat/blob/master/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.md)
+
 
 ### 开源项目
 - [开源项目](https://github.com/cristicmf/curious-cat/blob/master/Open_Project.md)
